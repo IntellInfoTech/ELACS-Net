@@ -1,5 +1,5 @@
 # ELACS-Net
-This repository is the `pytorch` code for our ELACS-Net.  
+This repository is the `PyTorch` code for our ELACS-Net.  
 ## 1. Introduction ##
 **1) Datasets**  
 

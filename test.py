@@ -41,13 +41,11 @@ def testing(network, val, save_img=config.para.save, manner='grey'):
     recon_root = "./reconstructed_images"
     if not os.path.isdir(recon_root):
         os.mkdir(recon_root)
-    datasets = [
-        "BSD68"
-        ]
+    datasets = ["BSD68"] if val else ["Set11","McM18","General100","Urban100","LIVE29","OST300","Set14"]
     with torch.no_grad():
         for one_dataset in datasets:
             print(one_dataset + "reconstruction start")
-            test_dataset_path = f"./dataset/{one_dataset}"
+            test_dataset_path = f"../dataset/{one_dataset}"
             # remove the previous log.
             # if os.path.isfile(f"{recon_root}/Res_{one_dataset}_gray_{config.para.rate}.txt"):
             #     os.remove(f"{recon_root}/Res_{one_dataset}_gray_{config.para.rate}.txt")
@@ -94,6 +92,7 @@ def testing(network, val, save_img=config.para.save, manner='grey'):
 
                         psnr = PSNR(x_ori, x_hat, data_range=255)
                         ssim = SSIM(x_ori, x_hat, data_range=255, multichannel=False)
+
 
                         sum_psnr += psnr
                         sum_ssim += ssim

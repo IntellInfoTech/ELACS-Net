@@ -23,14 +23,24 @@ Training set: [`BSDS500`](https://www2.eecs.berkeley.edu/Research/Projects/CS/vi
 
 **3) Competing methods**
 
-TBD.
+We provide a comprehensive comparison between ELACS-Net and other DL-based CS methods.
+The pure model-based CS methods include MAC-Net, DPA-Net, NL-CSNet, BCS-Net, CSformer, TCS-Net, AutoBCS and MTC-CSNet, and algorithm-based unfolding methods include TransCS, DGU-Net$^+$, SODAS-Net, DPC-DUN, OCTUF, LTwIST, UFC-Net and MDGF-Net.
 
 **4) Performance demonstrates**
 
-TBD.
+![图片](https://github.com/user-attachments/assets/8224e1b8-375a-4cec-b467-9b8812a60068)
+![图片](https://github.com/user-attachments/assets/8d3d74bd-e144-4442-baf6-b50d52768d01)
+
+
 
 ## 2. Usage ##
 
-TBD.
-
+**For train:**
+```
+python train.py --rate=0.10 --batch_size=32
+```
+**For test:**
+```
+python test.py --rate=0.10
+```
 ## End ##

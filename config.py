@@ -3,10 +3,10 @@ import argparse
 
 parser = argparse.ArgumentParser(description="Args of this repo.")
 parser.add_argument("--rate", default=0.3, type=float)
-parser.add_argument("--lr", default=0.001, type=float)
-parser.add_argument("--device", default="0")
+parser.add_argument("--lr", default=0.0001, type=float)
+parser.add_argument("--device", default="1")
 parser.add_argument("--time", default=0, type=int)
-parser.add_argument("--block_size", default=96, type=int)
+parser.add_argument("--block_size", default=64, type=int)
 parser.add_argument("--batch_size", default=32, type=int)
 
 parser.add_argument("--step_num", default=16, type=int)

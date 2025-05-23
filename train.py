@@ -26,7 +26,7 @@ def check_path(path):
 def main():
     check_path(config.para.save_path)
     check_path(config.para.folder)
-    set_seed(996007)
+    set_seed(914237)
 
     net = models.ELACS_Net().train().to(config.para.device)
     optimizer = optim.Adam(filter(lambda x: x.requires_grad, net.parameters()), lr=config.para.lr)

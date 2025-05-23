@@ -15,10 +15,8 @@ Training set: [`BSDS500`](https://www2.eecs.berkeley.edu/Research/Projects/CS/vi
 |    |-1  
 |    |-4  
 |    |-... (Sampling rates)
-|-utils 
-|    |-__init__.py  
-|    |-config.py  
-|    |-loader.py  
+|-config.py  
+|-loader.py  
 |-test.py  
 |-train.py
 ```

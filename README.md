@@ -3,7 +3,7 @@ This repository is the `PyTorch` code for our ELACS-Net.
 ## 1. Introduction ##
 **1) Datasets**  
 
-Training set: [`BSDS500`](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html)
+Training set: [`BSDS400`](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html)
 
 **2）Project structure**
 ```

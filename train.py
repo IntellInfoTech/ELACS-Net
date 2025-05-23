@@ -5,7 +5,7 @@ from tqdm import tqdm
 import torch.utils.data
 import torch.optim as optim
 import torch.optim.lr_scheduler as LS
-
+from fvcore.nn import FlopCountAnalysis, parameter_count_table, flop_count_table, flop_count
 import config
 import loader
 import models
@@ -29,8 +29,8 @@ def main():
     set_seed(996007)
 
     net = models.ELACS_Net().train().to(config.para.device)
-    optimizer = optim.Adam(filter(lambda x: x.requires_grad, net.parameters()), lr=10e-4)
-    scheduler = LS.MultiStepLR(optimizer, milestones=[50, 75], gamma=0.1)
+    optimizer = optim.Adam(filter(lambda x: x.requires_grad, net.parameters()), lr=config.para.lr)
+    scheduler = LS.MultiStepLR(optimizer, milestones=[10, 30, 50, 75], gamma=0.1)
     if os.path.exists(config.para.my_state_dict):
         if torch.cuda.is_available():
             net.load_state_dict(torch.load(config.para.my_state_dict, map_location=config.para.device))
@@ -48,14 +48,14 @@ def main():
 
     print("Data loading...")
 
-    train_set = loader.TrainDatasetFromFolder('dataset/BSDS500', block_size=config.para.block_size)
+    train_set = loader.TrainDatasetFromFolder('datasets/BSD400', block_size=config.para.block_size)
     dataset_train = torch.utils.data.DataLoader(
         dataset=train_set, num_workers=16, batch_size=config.para.batch_size, shuffle=True, pin_memory=True)
     # dataset_train = loader.train_loader()
     scaler = torch.cuda.amp.GradScaler(enabled=True)
 
     over_all_time = time.time()
-    for epoch in range(start_epoch, int(50)):
+    for epoch in range(start_epoch, int(100)):
         print("Please note:    Lr: {}.\n".format(optimizer.param_groups[0]['lr']))
 
         epoch_loss = 0.

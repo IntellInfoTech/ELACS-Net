@@ -28,8 +28,9 @@ The pure model-based CS methods include MAC-Net, DPA-Net, NL-CSNet, BCS-Net, CSf
 
 **4) Performance demonstrates**
 
-![图片](https://github.com/user-attachments/assets/8224e1b8-375a-4cec-b467-9b8812a60068)
-![图片](https://github.com/user-attachments/assets/8d3d74bd-e144-4442-baf6-b50d52768d01)
+<img width="2128" height="900" alt="image" src="https://github.com/user-attachments/assets/fdbda80a-7691-4ea0-b3ff-ce110666ba2b" />
+
+<img width="2130" height="909" alt="image" src="https://github.com/user-attachments/assets/f5b452b0-6e79-4a18-ac1f-43a0a26d240f" />
 
 
 
